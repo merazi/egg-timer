@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="A simple, beautiful egg timer with carefully timed recipes for every kind of yolk.">
+  <meta name="color-scheme" content="light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Egg Timer">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="canonical" href="./">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <title>Egg Timer — find your perfect yolk</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <main>
+    <section class="selection-screen" id="selection-screen" aria-labelledby="page-title">
+      <div class="topline">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 3.5c-5.2 0-10 8.6-10 16a10 10 0 0 0 20 0c0-7.4-4.8-16-10-16Z" fill="#efb642"/>
+          <path d="M16 7c-3.7 0-7.2 7.2-7.2 12.5a7.2 7.2 0 1 0 14.4 0C23.2 14.2 19.7 7 16 7Z" fill="#fffdf7"/>
+          <circle cx="16" cy="19.5" r="3.7" fill="#efb642"/>
+        </svg>
+        The little egg timer
+      </div>
+      <header class="intro">
+        <h1 id="page-title" tabindex="-1">How do you<br>like your yolk?</h1>
+        <p>Choose an egg style, then start the clock as soon as the stove goes on. Tell us when the water boils for a recipe-matched finish.</p>
+      </header>
+
+      <div class="egg-grid" aria-label="Choose an egg style">
+        <button class="egg-card" type="button" data-name="Soft-boiled" data-minutes="3" data-method="boiling">
+          <span class="egg-art">
+            <svg viewBox="0 0 160 160" role="img" aria-label="Egg white with a very runny golden yolk">
+              <ellipse cx="80" cy="124" rx="53" ry="10" fill="#d9d2c2"/>
+              <path d="M80 27c-21 0-48 38-48 65a48 48 0 0 0 96 0c0-27-27-65-48-65Z" fill="#fffdf7" stroke="#e1dccf" stroke-width="2"/>
+              <ellipse cx="80" cy="86" rx="24" ry="20" fill="#f3bd4d"/>
+              <ellipse cx="74" cy="80" rx="7" ry="4" fill="#ffdf91" opacity=".8"/>
+              <path d="M38 104c12 14 29 20 42 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </span>
+          <span class="egg-copy">
+            <span class="egg-number">01 / traditional</span>
+            <span class="egg-name">Soft-boiled</span>
+            <span class="egg-description">Traditional egg-timer style, with a runny center</span>
+            <span class="egg-time"><strong>3 min</strong><span>after boil</span></span>
+          </span>
+        </button>
+
+        <button class="egg-card" type="button" data-name="Soft-boiled (longer)" data-minutes="5" data-method="boiling">
+          <span class="egg-art">
+            <svg viewBox="0 0 160 160" role="img" aria-label="Egg with a soft, flowing golden yolk">
+              <ellipse cx="80" cy="124" rx="53" ry="10" fill="#d9d2c2"/>
+              <path d="M80 27c-21 0-48 38-48 65a48 48 0 0 0 96 0c0-27-27-65-48-65Z" fill="#fffdf7" stroke="#e1dccf" stroke-width="2"/>
+              <path d="M80 62c-13 0-23 10-23 23 0 18 13 29 23 29s23-11 23-29c0-13-10-23-23-23Z" fill="#efb642"/>
+              <ellipse cx="73" cy="72" rx="7" ry="4" fill="#ffdf91" opacity=".8"/>
+              <path d="M38 104c12 14 29 20 42 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </span>
+          <span class="egg-copy">
+            <span class="egg-number">02 / longer</span>
+            <span class="egg-name">Soft-boiled</span>
+            <span class="egg-description">Longer timing for a softer white and runny yolk</span>
+            <span class="egg-time"><strong>5 min</strong><span>after boil</span></span>
+          </span>
+        </button>
+
+        <button class="egg-card" type="button" data-name="Soft yolk · cold-water method" data-minutes="6" data-method="cold">
+          <span class="egg-art">
+            <svg viewBox="0 0 160 160" role="img" aria-label="Egg with a thick, jammy orange yolk">
+              <ellipse cx="80" cy="124" rx="53" ry="10" fill="#d9d2c2"/>
+              <path d="M80 27c-21 0-48 38-48 65a48 48 0 0 0 96 0c0-27-27-65-48-65Z" fill="#fffdf7" stroke="#e1dccf" stroke-width="2"/>
+              <circle cx="80" cy="86" r="22" fill="#eaa634"/>
+              <circle cx="80" cy="86" r="14" fill="#f4bd4d"/>
+              <ellipse cx="73" cy="76" rx="7" ry="4" fill="#ffdf91" opacity=".8"/>
+              <path d="M38 104c12 14 29 20 42 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </span>
+          <span class="egg-copy">
+            <span class="egg-number">03 / cold-water method</span>
+            <span class="egg-name">Soft yolk</span>
+            <span class="egg-description">Start egg in cold water; remove from heat at first bubbles</span>
+            <span class="egg-time"><strong>6 min</strong><span>after bubbles</span></span>
+          </span>
+        </button>
+
+        <button class="egg-card" type="button" data-name="Half-boiled" data-minutes="7" data-method="boiling">
+          <span class="egg-art">
+            <svg viewBox="0 0 160 160" role="img" aria-label="Egg with a mostly set soft golden yolk">
+              <ellipse cx="80" cy="124" rx="53" ry="10" fill="#d9d2c2"/>
+              <path d="M80 27c-21 0-48 38-48 65a48 48 0 0 0 96 0c0-27-27-65-48-65Z" fill="#fffdf7" stroke="#e1dccf" stroke-width="2"/>
+              <circle cx="80" cy="86" r="22" fill="#eaa634"/>
+              <circle cx="80" cy="86" r="16" fill="#efb642"/>
+              <circle cx="80" cy="86" r="10" fill="#f6ca69"/>
+              <ellipse cx="73" cy="76" rx="6" ry="3.5" fill="#ffdf91" opacity=".8"/>
+              <path d="M38 104c12 14 29 20 42 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </span>
+          <span class="egg-copy">
+            <span class="egg-number">04 / half-boiled</span>
+            <span class="egg-name">Half-boiled</span>
+            <span class="egg-description">A soft, runny style popular in Southeast Asia</span>
+            <span class="egg-time"><strong>7 min</strong><span>after boil</span></span>
+          </span>
+        </button>
+
+        <button class="egg-card" type="button" data-name="Hard boiled" data-minutes="10" data-method="boiling">
+          <span class="egg-art">
+            <svg viewBox="0 0 160 160" role="img" aria-label="Hard-boiled egg with a fully set yolk">
+              <ellipse cx="80" cy="124" rx="53" ry="10" fill="#d9d2c2"/>
+              <path d="M80 27c-21 0-48 38-48 65a48 48 0 0 0 96 0c0-27-27-65-48-65Z" fill="#fffdf7" stroke="#e1dccf" stroke-width="2"/>
+              <circle cx="80" cy="86" r="22" fill="#e8aa3b"/>
+              <circle cx="80" cy="86" r="17" fill="#efb642"/>
+              <circle cx="80" cy="86" r="11" fill="#f5c85f"/>
+              <path d="M38 104c12 14 29 20 42 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </span>
+          <span class="egg-copy">
+            <span class="egg-number">05 / firm</span>
+            <span class="egg-name">Hard boiled</span>
+            <span class="egg-description">Fully set yolk, ready for anything</span>
+            <span class="egg-time"><strong>10 min</strong><span>after boil</span></span>
+          </span>
+        </button>
+      </div>
+
+      <aside class="method-note">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 11v5m0-8h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span><strong>Start the clock as you turn on the stove.</strong> For the first, second, fourth, and fifth choices, bring a pot of water to a boil, add the eggs, then press the button. For the cold-water method, put the egg in cold water that covers it by no more than about 1 mm; at the first bubbles, remove the pan from heat and press the button. The times follow the traditional 3-minute, longer 5–6-minute, half-boiled 7-minute, and hard-boiled 10-minute methods described in the <a href="https://en.wikipedia.org/wiki/Boiled_egg" target="_blank" rel="noopener noreferrer">Wikipedia article on boiled eggs</a>. They are method-specific, not predictions of how long your stove takes to heat water; results vary with egg size, starting temperature, pot, and stove.</span>
+      </aside>
+    </section>
+
+    <section class="timer-screen" id="timer-screen" aria-label="Egg cooking countdown">
+      <p class="timer-kicker" id="timer-kicker">Heating water</p>
+      <h1 class="timer-title" id="timer-title">Soft yolk</h1>
+      <div class="clock-wrap">
+        <svg class="clock-ring" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="clock-track" cx="50" cy="50" r="46"/>
+          <circle class="clock-progress" id="clock-progress" cx="50" cy="50" r="46" pathLength="100"/>
+        </svg>
+        <span class="clock-time" id="clock-time">00:00</span>
+      </div>
+      <p class="timer-message" id="timer-message" role="status" aria-live="polite" aria-atomic="true">Clock started. Start heating the water now.</p>
+      <div class="timer-controls">
+        <button class="timer-button primary" id="boil-button" type="button">Water is boiling</button>
+        <button class="timer-button" id="cancel-button" type="button">Choose another egg</button>
+        <button class="timer-button primary" id="back-button" type="button" hidden>Back to egg choices</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
