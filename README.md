@@ -19,9 +19,8 @@ online.
 
 ## Publish on GitHub Pages
 
-Push the `main` branch to GitHub. The workflow in
-`.github/workflows/pages.yml` enables Pages and deploys the site automatically.
-For a repository named `egg-timer` under the `merazi` profile, the site URL is
+In the repository's **Settings → Pages**, choose **Deploy from a branch**, then
+select the `main` branch and `/ (root)` folder. GitHub will publish the site at
 <https://merazi.github.io/egg-timer/>.
 
 ## Project structure
