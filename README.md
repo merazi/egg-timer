@@ -17,6 +17,14 @@ Then open <http://localhost:8000>. To check the install prompt and offline
 behavior, use a browser that supports progressive web apps and visit once while
 online.
 
+## Publish on GitHub Pages
+
+Push the `main` branch to GitHub. The workflow in
+`.github/workflows/pages.yml` deploys the site automatically. In the repository,
+open **Settings → Pages** and set the build and deployment source to **GitHub
+Actions**. For a repository named `egg-timer` under the `merazi` profile, the
+site URL will be <https://merazi.github.io/egg-timer/>.
+
 ## Project structure
 
 - `index.html` — accessible app markup and metadata
